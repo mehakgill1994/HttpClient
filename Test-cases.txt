@@ -1,0 +1,20 @@
+*******required test cases*******
+httpc help
+httpc help get
+httpc help post
+httpc get "http://httpbin.org/get?course=networking&assignment=1"
+httpc get -v "http://httpbin.org/get?course=networking&assignment=1"
+httpc get -v -h Content-Type:application/json "http://httpbin.org/get?course=networking&assignment=1"
+httpc post http://httpbin.org/post
+httpc post -h Content-Type:application/json -d "{"Assignment":1}" http://httpbin.org/post
+httpc post -h Content-Type:application/json -f "input.txt" http://httpbin.org/post
+httpc post -v -h Content-Type:application/json -f "input.txt" http://httpbin.org/post
+
+***********bonus***********
+//saving output to file
+httpc get -v "http://httpbin.org/get?course=networking&assignment=1" -o "save.txt"
+httpc post -v -d {"Assignment":"12"} http://httpbin.org/post -o "save.txt"
+
+//redirect
+httpc get "httpbin.org/redirect/3"
+		
